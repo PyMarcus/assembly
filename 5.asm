@@ -1,13 +1,12 @@
-# verificar produto do numero:
+
 .data 
-	intro: .asciiz "Insira o número: " 
-	# respostas se o número é ou não triangular
+	intro: .asciiz "Insira o n�mero: " 
 	yes: .asciiz "yes" 
 	no: .asciiz "no" 
 
 .text 
 
-	# obtidos atraves do produto
+	# obtidos atraves da produto
 	
 	
 	# ****************** entrada de dados *******************
@@ -22,10 +21,7 @@
 	
 	li $t2, 0 # contador
 	li $t3, 1 # produto
-	loop:
-		# faz o produto dos valores até o numero, se o valor for igual ao número
-		# este será um triângular
-		
+	loop:		
 		addi $t2, $t2, 1
 		mul $t3, $t2, $t3
 		beq $t3, $t1, yep  # se for igual, vai para o rotulo
