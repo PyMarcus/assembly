@@ -1,13 +1,13 @@
-# verificar se o número é triângular:
+# verificar produto do numero:
 .data 
-	intro: .asciiz "Insira o número: " 
-	# respostas se o número é ou não triangular
+	intro: .asciiz "Insira o nÃºmero: " 
+	# respostas se o nÃºmero Ã© ou nÃ£o triangular
 	yes: .asciiz "yes" 
 	no: .asciiz "no" 
 
 .text 
 
-	# obtidos atraves da soma aritmética
+	# obtidos atraves do produto
 	
 	
 	# ****************** entrada de dados *******************
@@ -23,8 +23,8 @@
 	li $t2, 0 # contador
 	li $t3, 1 # produto
 	loop:
-		# soma os valores até o numero, se o valor for igual ao número
-		# este será um triângular
+		# faz o produto dos valores atÃ© o numero, se o valor for igual ao nÃºmero
+		# este serÃ¡ um triÃ¢ngular
 		
 		addi $t2, $t2, 1
 		mul $t3, $t2, $t3
