@@ -1,10 +1,18 @@
 # ler 3 valores(diferentes) somar os 2 maiores
 .data
   # alocação de mensagens de texto na memória
-	num1: .asciiz " Informe o num1: "
-	num2: .asciiz " Informe o num2: "
-	num3: .asciiz " Informe o num3: "
-	result: .asciiz " Resultado: "
+	num1: 
+	     .asciiz 
+             " Informe o num1: "
+	num2: 
+             .asciiz
+             " Informe o num2: "
+	num3:
+             .asciiz
+             " Informe o num3: "
+	result:
+             .asciiz
+             " Resultado: "
  
 .text
   	# ---------- ENTRADA DE DADOS ------------
@@ -59,7 +67,7 @@
   		syscall
   		
   		li $v0, 1
-  		move $a0, $t3  # move o valor do registrador t3 para a0
+  		move $a0, $t3   # move o valor do registrador t3 para a0
   		syscall # exibe soma de t1 com t2
   		j fim
   	t2et3maiores:
@@ -69,7 +77,7 @@
   		syscall
   		
   		li $v0, 1
-  		move $a0, $t3  # move o valor do registrador t3 para a0
+  		move $a0, $t3   # move o valor do registrador t3 para a0
   		syscall # exibe soma de t2 com t3
   		j fim
   	t1et3maiores:
@@ -79,7 +87,7 @@
   		syscall
   		
   		li $v0, 1
-  		move $a0, $t3  # move o valor do registrador t3 para a0
+  		move $a0, $t3   # move o valor do registrador t3 para a0
   		syscall # exibe soma de t1 com t3
   		j fim
   	

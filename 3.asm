@@ -1,6 +1,8 @@
 # gerar a serie 1 44 2 55 3 66...
 .data 
-	intro: .asciiz "Informe um valor: "
+	intro:
+             .asciiz 
+             "Informe um valor: "
 
 .text 
 	li $t0, 1  # valor de início da sequência

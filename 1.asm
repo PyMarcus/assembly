@@ -1,20 +1,28 @@
 # ler a hora inicial e final de um jogo, máximo de 24h, e exibir a duração.
 .data 
 	# alocação de memória para armazenamento de frases
-	inicio: .asciiz "Informe a hora inicial: "
-	fim: .asciiz "Informe a hora final: "
-	duracao: .asciiz "A duração foi de: "
-	erro: .asciiz "\n[ERRO] tempo inválido"
+	inicio:
+	      .asciiz
+              "Informe a hora inicial: "
+	fim: 
+              .asciiz
+              "Informe a hora final: "
+	duracao:
+	      .asciiz
+              "A duração foi de: "
+	erro:
+              .asciiz
+              "\n[ERRO] tempo inválido"
 .text
 
 	# ------------------ LEITURA E ENTRADA DE DADOS ----------------------
 	
 	li $t3, 24 # atribui horário de referencia
 	
-	# entrada de texto
+	# exibe mensagem inicial
 	li $v0, 4
 	la $a0, inicio
-	syscall # hora de entrada
+	syscall        # hora de entrada
 	
 	# entrada da hora de início:
 	li $v0, 5
@@ -40,7 +48,7 @@
 	j final
 		diaSeguinte:
 			# realiza a subtração das horas, se o dia ultrapassa 24h
-			sub $t1, $t3, $t1  # subtrai 24h de t1 e a diferenca é acrescida a t2
+			sub $t1, $t3, $t1    # subtrai 24h de t1 e a diferenca é acrescida a t2
 			add $t1, $t2, $t1
 			ble $t1, $t3, final  # verifica se o resultado é maior q 24, se for, da erro
 			# se for maior q 24:
@@ -54,7 +62,7 @@
 		# encerra o programa
 		li, $v0, 4
 		la $a0, duracao
-		syscall # exibe mensagem precede o resultado
+		syscall  # exibe mensagem precede o resultado
 		
 		li $v0, 1
 		move $a0, $t1
